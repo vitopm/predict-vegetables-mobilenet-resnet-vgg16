@@ -52,10 +52,10 @@ def predict_image(filename,model):
     col11, col12 = st.columns(2)
     with col11:
         st.write('#### Your image')
-        st.image(filename)
+        st.image(filename, caption=filename.name)
 
     with col12:
-        st.write('#### Prediction')
+        st.write(f'#### Prediction: {category[index]}')
         fig, ax = plt.subplots()
         plt.title("Prediction - {}".format(category[index]))
         plt.axis('off')
@@ -68,31 +68,36 @@ def main():
     st.image('./images/vege-background.jpg')
     st.title("Predict your vegetables!")
     st.write('🍅🍆🥒🥕🥔🥜🍅🍆🥒🥕🥔🥜🍅🍆🥒🥕🥔🥜')
-    st.write('This site predict these vegetables below, you can also click them to try the images from our dataset or use your own picture!')
-
-    col1, col2, col3, col4, col5 = st.columns(5)
-
-    for idx,name in enumerate(category.values()):
-        if idx < len(category)*(1/5):
-            with col1:
-                st.write(f'- [{name}]({test_dataset[idx]})')
-        elif idx < len(category)*(2/5):
-            with col2:
-                st.write(f'- [{name}]({test_dataset[idx]})')
-        elif idx < len(category)*(3/5):
-            with col3:
-                st.write(f'- [{name}]({test_dataset[idx]})')
-        elif idx < len(category)*(4/5):
-            with col4:
-                st.write(f'- [{name}]({test_dataset[idx]})')
-        else:
-            with col5:
-                st.write(f'- [{name}]({test_dataset[idx]})')
+    st.write('This site predict these vegetables on the list below, you can also click the vegetable\'s name to try the images from our dataset or use your own picture!')
+    with st.expander("💡Show vegetable list"):
+        col1, col2, col3, col4, col5 = st.columns(5)
+        for idx,name in enumerate(category.values()):
+            if idx < len(category)*(1/5):
+                with col1:
+                    st.write(f'- [{name}]({test_dataset[idx]})')
+            elif idx < len(category)*(2/5):
+                with col2:
+                    st.write(f'- [{name}]({test_dataset[idx]})')
+            elif idx < len(category)*(3/5):
+                with col3:
+                    st.write(f'- [{name}]({test_dataset[idx]})')
+            elif idx < len(category)*(4/5):
+                with col4:
+                    st.write(f'- [{name}]({test_dataset[idx]})')
+            else:
+                with col5:
+                    st.write(f'- [{name}]({test_dataset[idx]})')
 
     # upload image
     st.write("----")
-    st.subheader('📄Upload your picture')
-    uploaded_file = st.file_uploader(label="Choose an image",accept_multiple_files=False,type=['png', 'jpg', 'jpeg'])
+    st.subheader('📄Insert your picture')
+
+    tab1, tab2 = st.tabs(["Upload image", 'Take picture'])
+    with tab1:
+        uploaded_file = st.file_uploader(label="Choose an image",accept_multiple_files=False,type=['png', 'jpg', 'jpeg'])
+
+    with tab2:
+        uploaded_file = st.camera_input("Take a picture")
 
     if uploaded_file is not None:
         # load model
