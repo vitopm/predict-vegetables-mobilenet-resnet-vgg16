@@ -90,12 +90,12 @@ def main():
 
     # upload image
     st.write("----")
-    st.subheader('📄Insert your picture')
+    st.subheader('🖼️Insert your picture')
     
     # load model
     model = tf.keras.models.load_model('models/mobilenet_model_v2.h5')
 
-    tab1, tab2 = st.tabs(["Upload image", 'Take picture'])
+    tab1, tab2 = st.tabs(["⬆️Upload image", '📸Take picture'])
     with tab1:
         uploaded_file = st.file_uploader(label="Choose an image",accept_multiple_files=False,type=['png', 'jpg', 'jpeg'])
         if uploaded_file is not None:
