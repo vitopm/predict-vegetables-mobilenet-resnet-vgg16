@@ -35,7 +35,7 @@ for idx,name in enumerate(category.values()):
 # filename = './TEST/timun.jpg'
 
 def predict_image(filename,model):
-    
+    st.write('----')
     st.subheader('Prediction result')
     img_ = image.load_img(filename, target_size=(224, 224))
     img_array = image.img_to_array(img_)
@@ -50,6 +50,7 @@ def predict_image(filename,model):
     with col11:
         st.write('#### Your image')
         st.image(filename)
+
     with col12:
         st.write('#### Prediction')
         fig, ax = plt.subplots()
@@ -57,6 +58,11 @@ def predict_image(filename,model):
         plt.axis('off')
         plt.imshow(img_array)
         st.pyplot(fig)
+    st.write('----')
+    st.write('🍅🍆🥒🥕🥔🥜🍅🍆🥒🥕🥔🥜🍅🍆🥒🥕🥔🥜🍅🍆🥒🥕🥔🥜🍅🍆🥒🥕🥔🥜🍅🍆')
+
+
+
 
 # upload image
 st.write("----")
