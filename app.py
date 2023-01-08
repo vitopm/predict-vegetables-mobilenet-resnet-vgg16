@@ -75,19 +75,19 @@ def main():
     for idx,name in enumerate(category.values()):
         if idx < len(category)*(1/5):
             with col1:
-                st.write(f'[{name}]({test_dataset[idx]})')
+                st.write(f'- [{name}]({test_dataset[idx]})')
         elif idx < len(category)*(2/5):
             with col2:
-                st.write(f'[{name}]({test_dataset[idx]})')
+                st.write(f'- [{name}]({test_dataset[idx]})')
         elif idx < len(category)*(3/5):
             with col3:
-                st.write(f'[{name}]({test_dataset[idx]})')
+                st.write(f'- [{name}]({test_dataset[idx]})')
         elif idx < len(category)*(4/5):
             with col4:
-                st.write(f'[{name}]({test_dataset[idx]})')
+                st.write(f'- [{name}]({test_dataset[idx]})')
         else:
             with col5:
-                st.write(f'[{name}]({test_dataset[idx]})')
+                st.write(f'- [{name}]({test_dataset[idx]})')
 
     # upload image
     st.write("----")
