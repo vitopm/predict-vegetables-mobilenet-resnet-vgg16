@@ -97,7 +97,8 @@ def main():
         uploaded_file = st.file_uploader(label="Choose an image",accept_multiple_files=False,type=['png', 'jpg', 'jpeg'])
 
     with tab2:
-        uploaded_file = st.camera_input("Take a picture")
+        with st.expander('Click here to open camera'):
+            uploaded_file = st.camera_input("Take a picture")
 
     if uploaded_file is not None:
         # load model
