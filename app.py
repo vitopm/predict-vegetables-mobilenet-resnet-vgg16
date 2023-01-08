@@ -2,6 +2,7 @@ import streamlit as st
 import numpy as np
 import matplotlib.pyplot as plt
 import tensorflow as tf
+import random
 from tensorflow.keras.preprocessing import image
 
 category={
@@ -27,15 +28,24 @@ test_dataset = [
     'https://binusianorg-my.sharepoint.com/personal/vito_minardi_binus_ac_id/_layouts/15/guestaccess.aspx?folderid=04da96e9b9fab4321b0f5298fe56cb81f&authkey=ARtPJKN58bB9ZePu48zpGhI&e=UePxcl'
 ]
 
+thinking_word = [
+    'I think this is it!',
+    'Is this correct?',
+    'Maybe this one',
+    'Here is what I thought'
+]
+
 def predict_image(filename,model):
     st.write('----')
     st.subheader('🔎Prediction result')
     img_ = image.load_img(filename, target_size=(224, 224))
     img_array = image.img_to_array(img_)
     img_processed = np.expand_dims(img_array, axis=0) 
-    img_processed /= 255.   
-    
-    prediction = model.predict(img_processed)
+    img_processed /= 255.
+
+    with st.spinner('Which vegetable is this hmm..'):
+        prediction = model.predict(img_processed)
+        st.success(thinking_word[random.randint(0, len(thinking_word)-1)])
     index = np.argmax(prediction)
 
     # show result
@@ -53,7 +63,6 @@ def predict_image(filename,model):
         st.pyplot(fig)
     st.write('----')
     st.write('🍅🍆🥒🥕🥔🥜🍅🍆🥒🥕🥔🥜🍅🍆🥒🥕🥔🥜🍅🍆🥒🥕🥔🥜🍅🍆🥒🥕🥔🥜🍅🍆')
-
 
 def main():
     st.image('./images/vege-background.jpg')
@@ -82,7 +91,6 @@ def main():
         # load model
         model = tf.keras.models.load_model('models/mobilenet_model_v2.h5')
         predict_image(uploaded_file ,model)
-
 
 if __name__ == '__main__':
     main()
