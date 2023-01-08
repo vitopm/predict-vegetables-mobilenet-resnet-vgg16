@@ -64,12 +64,18 @@ def predict_image(filename,model):
     st.write('----')
     st.write('🍅🍆🥒🥕🥔🥜🍅🍆🥒🥕🥔🥜🍅🍆🥒🥕🥔🥜🍅🍆🥒🥕🥔🥜🍅🍆🥒🥕🥔🥜🍅🍆')
 
+
+
 def main():
     st.image('./images/vege-background.jpg')
-    st.title("Predict your vegetables!")
+    st.title("What vegetable is that?!")
     st.write('🍅🍆🥒🥕🥔🥜🍅🍆🥒🥕🥔🥜🍅🍆🥒🥕🥔🥜')
-    st.write('Utilizing deep learning model trained with __MobileNetV2__ algorithm, this website can predict vegetables from the list below. Click button below to see vegetable\'s name available to predict. \n to try the images from __our dataset__ or __use your own pictures__!')
+    st.caption('*\"Broccoli or cauliflower?\"*')
+    st.caption('*\"I have no idea.. but this website does!\"*')
+    st.write('I know we are all tired of guessing or asking what kind of vegetable is it on top the shelf in your local supermarket. No worries! We are here to help!')
+    st.write('Utilizing deep learning model trained with __MobileNetV2__ algorithm, this website can predict vegetables from the list below. Click button below to see which vegetable names are available to predict.')
     with st.expander("💡Show vegetable list"):
+        st.write('Click to see the images from __our dataset__ or __use your own pictures__!')
         col1, col2, col3, col4, col5 = st.columns(5)
         for idx,name in enumerate(category.values()):
             if idx < len(category)*(1/5):
@@ -87,6 +93,7 @@ def main():
             else:
                 with col5:
                     st.write(f'- [{name}]({test_dataset[idx]})')
+        st.caption('Dataset Source: [Vegetable Image Dataset - Kaggle](https://www.kaggle.com/datasets/misrakahmed/vegetable-image-dataset)')
 
     # upload image
     st.write("----")
