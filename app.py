@@ -15,18 +15,36 @@ category={
     9: 'Cucumber', 10: 'Papaya', 11: 'Potato', 12: 'Pumpkin', 13 : "Radish", 14: "Tomato"
 }
 
+test_dataset = [
+    'https://binusianorg-my.sharepoint.com/personal/vito_minardi_binus_ac_id/_layouts/15/guestaccess.aspx?folderid=051e821168b524b0f9f054a7e21778781&authkey=AUoxRlM91Q-KijUKJlqjcek&e=8ptqRE',
+    'https://binusianorg-my.sharepoint.com/personal/vito_minardi_binus_ac_id/_layouts/15/guestaccess.aspx?folderid=0cb41cd00cc62489fb6ed772a86bc4ef2&authkey=AY_MYYoZ_-wJY-mO8qp-mRU&e=a0mrJX',
+    'https://binusianorg-my.sharepoint.com/personal/vito_minardi_binus_ac_id/_layouts/15/guestaccess.aspx?folderid=04f7d4857f5c04c1ba2b8eed4dd66c048&authkey=AQplgrKv6vmYmaV53MJxeDY&e=VpRV7m',
+    'https://binusianorg-my.sharepoint.com/personal/vito_minardi_binus_ac_id/_layouts/15/guestaccess.aspx?folderid=0d78b44bb314a4afb83e0820300eec818&authkey=AYnBWiNHgS59n2rilo1WPwI&e=ekSUCh',
+    'https://binusianorg-my.sharepoint.com/personal/vito_minardi_binus_ac_id/_layouts/15/guestaccess.aspx?folderid=0d015ae32a07d482aaa65e7355b1832d8&authkey=AcUhMAjSfa8GWvnU5MfwS5w&e=3irSJo',
+    'https://binusianorg-my.sharepoint.com/personal/vito_minardi_binus_ac_id/_layouts/15/guestaccess.aspx?folderid=0f8df0aa970cd446daf094e0dae762aa5&authkey=Ae0Etw2pok6IrAanfbL1D3A&e=RE1Dhb',
+    'https://binusianorg-my.sharepoint.com/personal/vito_minardi_binus_ac_id/_layouts/15/guestaccess.aspx?folderid=05a9d06800e354f859a2dd2f6d3ba5330&authkey=AcWwNoRBLjzklHedjW8SYPs&e=EMihQB',
+    'https://binusianorg-my.sharepoint.com/personal/vito_minardi_binus_ac_id/_layouts/15/guestaccess.aspx?folderid=05168592fd6d048648ccae9862f03af14&authkey=AX206hNjwLp8P-Sg82Mhgb4&e=WLV8jO',
+    'https://binusianorg-my.sharepoint.com/personal/vito_minardi_binus_ac_id/_layouts/15/guestaccess.aspx?folderid=0c3b9e4b860ed44f5a9099decdafead82&authkey=AXm4Z7YtBxik9qljIfnBiVk&e=mvZ5yr',
+    'https://binusianorg-my.sharepoint.com/personal/vito_minardi_binus_ac_id/_layouts/15/guestaccess.aspx?folderid=03bdaa4b1d6944a438a43e4a3c5f8bf28&authkey=AUYQSyVVFAPdFAAttK4gt7o&e=YjLeHt',
+    'https://binusianorg-my.sharepoint.com/personal/vito_minardi_binus_ac_id/_layouts/15/guestaccess.aspx?folderid=08bb4241aa474470a825546011c48d774&authkey=AaY_JARxD8bA6WeegiGw-U4&e=tCPp9A',
+    'https://binusianorg-my.sharepoint.com/personal/vito_minardi_binus_ac_id/_layouts/15/guestaccess.aspx?guestaccesstoken=MCkMjiXe8vOPyyFS1qVowCQAWI0XxRJj%2FTaOn8yHsnw%3D&folderid=2_087a163b811d6466190a23054701e022e&rev=1&e=QPhAnA',
+    'https://binusianorg-my.sharepoint.com/personal/vito_minardi_binus_ac_id/_layouts/15/guestaccess.aspx?folderid=0b3e3c5e20aab4bb4895d5d3e6c449d22&authkey=ARddIe32w5mg-hkvGFHaqWo&e=8w8q9w',
+    'https://binusianorg-my.sharepoint.com/personal/vito_minardi_binus_ac_id/_layouts/15/guestaccess.aspx?folderid=059936ef455a14426a445256adef2be79&authkey=AcND8Ivkh3WrcoBuV81L6Cc&e=uKqD1H',
+    'https://binusianorg-my.sharepoint.com/personal/vito_minardi_binus_ac_id/_layouts/15/guestaccess.aspx?folderid=04da96e9b9fab4321b0f5298fe56cb81f&authkey=ARtPJKN58bB9ZePu48zpGhI&e=UePxcl'
+]
+
 st.write('This site predict these vegetables below, you can also click them to try the images from our dataset or use your own picture!')
 col1, col2, col3 = st.columns(3)
 for idx,name in enumerate(category.values()):
     if idx < len(category)*(1/3):
         with col1:
-            st.write(f'- {name}')
+            st.write(f'- [{name}]({test_dataset[idx]})')
     elif idx < len(category)*(2/3):
         with col2:
-            st.write(f'- {name}')
+            st.write(f'- [{name}]({test_dataset[idx]})')
     else:
         with col3:
-            st.write(f'- {name}')
+            st.write(f'- [{name}]({test_dataset[idx]})')
 
 # filename = './TEST/cabbage-1.jpg'
 # filename = './TEST/cabbage-2.jpg'
