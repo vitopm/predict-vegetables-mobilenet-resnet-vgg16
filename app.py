@@ -45,7 +45,7 @@ def predict_image(filename,model):
 
     with st.spinner('Which vegetable is this hmm..'):
         prediction = model.predict(img_processed)
-        st.success(thinking_word[random.randint(0, len(thinking_word)-1)])
+        st.success(f'🤖 : *{thinking_word[random.randint(0, len(thinking_word)-1)]}*')
     index = np.argmax(prediction)
 
     # show result
@@ -68,7 +68,7 @@ def main():
     st.image('./images/vege-background.jpg')
     st.title("Predict your vegetables!")
     st.write('🍅🍆🥒🥕🥔🥜🍅🍆🥒🥕🥔🥜🍅🍆🥒🥕🥔🥜')
-    st.write('This site predict these vegetables on the list below, you can also click the vegetable\'s name to try the images from our dataset or use your own picture!')
+    st.write('Utilizing deep learning model trained with __MobileNetV2__ algorithm, this website can predict vegetables from the list below. Click button below to see vegetable\'s name available to predict. \n to try the images from __our dataset__ or __use your own pictures__!')
     with st.expander("💡Show vegetable list"):
         col1, col2, col3, col4, col5 = st.columns(5)
         for idx,name in enumerate(category.values()):
@@ -91,19 +91,22 @@ def main():
     # upload image
     st.write("----")
     st.subheader('📄Insert your picture')
+    
+    # load model
+    model = tf.keras.models.load_model('models/mobilenet_model_v2.h5')
 
     tab1, tab2 = st.tabs(["Upload image", 'Take picture'])
     with tab1:
         uploaded_file = st.file_uploader(label="Choose an image",accept_multiple_files=False,type=['png', 'jpg', 'jpeg'])
+        if uploaded_file is not None:
+            predict_image(uploaded_file ,model)
 
     with tab2:
+        # pass
         with st.expander('Click here to open camera'):
             uploaded_file = st.camera_input("Take a picture")
-
-    if uploaded_file is not None:
-        # load model
-        model = tf.keras.models.load_model('models/mobilenet_model_v2.h5')
-        predict_image(uploaded_file ,model)
+            if uploaded_file is not None:
+                predict_image(uploaded_file ,model)
 
 if __name__ == '__main__':
     main()
