@@ -6,7 +6,7 @@ import random
 from tensorflow.keras.preprocessing import image
 
 category={
-    0: 'Bean', 1: 'Bitter_Gourd', 2: 'Bottle_Gourd', 3 : 'Brinjal', 4: "Broccoli", 5: 'Cabbage', 6: 'Capsicum', 7: 'Carrot', 8: 'Cauliflower',
+    0: 'Bean', 1: 'Bitter Gourd', 2: 'Bottle Gourd', 3 : 'Green Brinjal', 4: "Broccoli", 5: 'Cabbage', 6: 'Capsicum', 7: 'Carrot', 8: 'Cauliflower',
     9: 'Cucumber', 10: 'Papaya', 11: 'Potato', 12: 'Pumpkin', 13 : "Radish", 14: "Tomato"
 }
 
@@ -70,17 +70,24 @@ def main():
     st.write('🍅🍆🥒🥕🥔🥜🍅🍆🥒🥕🥔🥜🍅🍆🥒🥕🥔🥜')
     st.write('This site predict these vegetables below, you can also click them to try the images from our dataset or use your own picture!')
 
-    col1, col2, col3 = st.columns(3)
+    col1, col2, col3, col4, col5 = st.columns(5)
+
     for idx,name in enumerate(category.values()):
-        if idx < len(category)*(1/3):
+        if idx < len(category)*(1/5):
             with col1:
-                st.write(f'- [{name}]({test_dataset[idx]})')
-        elif idx < len(category)*(2/3):
+                st.write(f'[{name}]({test_dataset[idx]})')
+        elif idx < len(category)*(2/5):
             with col2:
-                st.write(f'- [{name}]({test_dataset[idx]})')
-        else:
+                st.write(f'[{name}]({test_dataset[idx]})')
+        elif idx < len(category)*(3/5):
             with col3:
-                st.write(f'- [{name}]({test_dataset[idx]})')
+                st.write(f'[{name}]({test_dataset[idx]})')
+        elif idx < len(category)*(4/5):
+            with col4:
+                st.write(f'[{name}]({test_dataset[idx]})')
+        else:
+            with col5:
+                st.write(f'[{name}]({test_dataset[idx]})')
 
     # upload image
     st.write("----")
