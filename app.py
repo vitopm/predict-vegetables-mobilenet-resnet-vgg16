@@ -35,7 +35,8 @@ for idx,name in enumerate(category.values()):
 # filename = './TEST/timun.jpg'
 
 def predict_image(filename,model):
-    st.image(filename)
+    
+    st.subheader('Prediction result')
     img_ = image.load_img(filename, target_size=(224, 224))
     img_array = image.img_to_array(img_)
     img_processed = np.expand_dims(img_array, axis=0) 
@@ -45,12 +46,21 @@ def predict_image(filename,model):
     index = np.argmax(prediction)
 
     # show result
-    fig, ax = plt.subplots()
-    plt.title("Prediction - {}".format(category[index]))
-    plt.imshow(img_array)
-    st.pyplot(fig)
+    col11, col12 = st.columns(2)
+    with col11:
+        st.write('#### Your image')
+        st.image(filename)
+    with col12:
+        st.write('#### Prediction')
+        fig, ax = plt.subplots()
+        plt.title("Prediction - {}".format(category[index]))
+        plt.axis('off')
+        plt.imshow(img_array)
+        st.pyplot(fig)
 
 # upload image
+st.write("----")
+st.subheader('Upload your picture')
 uploaded_file = st.file_uploader(label="Choose an image",accept_multiple_files=False,type=['png', 'jpg', 'jpeg'])
 
 if uploaded_file is not None:
