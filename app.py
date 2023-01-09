@@ -57,7 +57,7 @@ def predict_image(filename,model):
     with col12:
         st.write(f'#### Prediction: {category[index]}')
         fig, ax = plt.subplots()
-        plt.title("Prediction - {}".format(category[index]))
+        plt.title(f"Prediction - {category[index]} - {100*np.max(prediction):.2f}%")
         plt.axis('off')
         plt.imshow(img_array)
         st.pyplot(fig)
