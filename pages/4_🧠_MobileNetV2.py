@@ -69,8 +69,6 @@ mobilenet_model = tf.keras.Sequential([
         tf.keras.layers.Dense(15, activation='softmax')
     ])
 
-    mobilenet_model.summary()
-
     st.text('''
     Model: "sequential"
 _________________________________________________________________
