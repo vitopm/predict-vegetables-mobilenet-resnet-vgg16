@@ -92,7 +92,7 @@ _________________________________________________________________
     ''')
 
     st.write('##### Draw the architecture')
-    tf.keras.utils.plot_model(mobilenet_model, to_file="mobilenet_model.png", show_shapes=True)
+    
     st.image('mobilenet_model.png')
 
     
