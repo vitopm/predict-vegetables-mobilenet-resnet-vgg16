@@ -16,7 +16,7 @@ def main():
     st.caption('*\"I have no idea.. but this website does!\"*')
     st.write('----')
     st.write('#### Confusion Matrix')
-    st.image('asset\images\confusion_matrix.png')
+    st.image('asset/images/confusion_matrix.png')
     st.write('----')
     st.write('#### Classification Report')
 
