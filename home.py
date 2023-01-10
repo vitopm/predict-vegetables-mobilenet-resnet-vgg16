@@ -74,6 +74,7 @@ def main():
     st.write('🍅🍆🥒🥕🥔🥜🍅🍆🥒🥕🥔🥜🍅🍆🥒🥕🥔🥜')
     st.caption('*\"Broccoli or cauliflower?\"*')
     st.caption('*\"I have no idea.. but this website does!\"*')
+    st.write('----')
     st.write('I know we are all tired of guessing or asking what kind of vegetable is it on top the shelf in your local supermarket. No worries, we are here to help!')
     st.write('Utilizing deep learning model trained with __MobileNetV2__ algorithm, this website can predict vegetables from the list below. Click button below to see which vegetable names are available to predict.')
     with st.expander("💡Show vegetable list"):
