@@ -99,23 +99,23 @@ def main():
 
     # upload image
     st.write("----")
-    st.subheader('🖼️Insert your picture')
+    st.subheader('🖼️Insert picture to predict')
     
     # load model
     model = tf.keras.models.load_model('models/mobilenet_model_v2.h5')
 
-    tab1, tab2 = st.tabs(["⬆️Upload image", '📸Take picture'])
+    tab1, tab2 = st.tabs(["⬆️Upload photo", '📸Take photo'])
     with tab1:
         uploaded_file = st.file_uploader(label="Choose an image",accept_multiple_files=False,type=['png', 'jpg', 'jpeg'])
         if uploaded_file is not None:
-            predict_image(uploaded_file ,model)
+            predict_image(uploaded_file ,model) #predict image
 
     with tab2:
         # pass
         with st.expander('Click here to open camera'):
             uploaded_file = st.camera_input("Take a picture")
             if uploaded_file is not None:
-                predict_image(uploaded_file ,model)
+                predict_image(uploaded_file ,model) #predict image
 
 if __name__ == '__main__':
     main()
