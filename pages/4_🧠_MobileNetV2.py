@@ -1,21 +1,4 @@
 import streamlit as st
-import numpy as np
-import matplotlib.pyplot as plt
-import tensorflow as tf
-import random
-from tensorflow.keras.preprocessing import image
-import os
-import glob
-import pandas as pd
-
-import tensorflow as tf
-from tensorflow import keras
-from tensorflow.keras import layers
-from tensorflow.keras.layers import Conv2D, MaxPooling2D, GlobalAveragePooling2D, Dense, ReLU, Softmax, BatchNormalization, Dropout
-from tensorflow.random import set_seed
-from tensorflow.keras.preprocessing import image
-from sklearn.metrics import confusion_matrix, classification_report
-
 
 def main():
     st.image('./asset/images/vege-background.jpg')
@@ -59,15 +42,6 @@ mobilenet_model = tf.keras.Sequential([
 
     st.code(code3, language='python')
 
-    height, width = 224, 224
-
-    pretrained_mobilenet_model = tf.keras.applications.MobileNetV2(weights='imagenet', include_top=False, input_shape=[height,width, 3])
-    pretrained_mobilenet_model.trainable=False
-    mobilenet_model = tf.keras.Sequential([
-        pretrained_mobilenet_model,
-        tf.keras.layers.GlobalAveragePooling2D(),
-        tf.keras.layers.Dense(15, activation='softmax')
-    ])
 
     st.text('''
     Model: "sequential"
