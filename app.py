@@ -32,7 +32,11 @@ thinking_word = [
     'I think this is it!',
     'Is this correct?',
     'Maybe this one',
-    'Here is what I thought'
+    'Here is what I thought',
+    'This is what I think, is this correct?',
+    'I\'d to be human than robot',
+    'How does it feel like to be human?',
+    'I don\'t really like vegetables, because I can\'t eat them'
 ]
 
 def predict_image(filename,model):
@@ -66,7 +70,7 @@ def predict_image(filename,model):
 
 def main():
     st.image('./asset/images/vege-background.jpg')
-    st.title("What vegetable is that?!")
+    st.title("🤔What vegetable is that?!")
     st.write('🍅🍆🥒🥕🥔🥜🍅🍆🥒🥕🥔🥜🍅🍆🥒🥕🥔🥜')
     st.caption('*\"Broccoli or cauliflower?\"*')
     st.caption('*\"I have no idea.. but this website does!\"*')
