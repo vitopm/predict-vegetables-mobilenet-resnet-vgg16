@@ -1,12 +1,4 @@
 import streamlit as st
-import numpy as np
-import matplotlib.pyplot as plt
-import tensorflow as tf
-import random
-from tensorflow.keras.preprocessing import image
-import os
-import glob
-import pandas as pd
 
 def main():
     st.image('./asset/images/vege-background.jpg')
