@@ -26,7 +26,7 @@ def main():
         image_path = random.choice(file_paths) # select random item from list of image paths
         image_dict[cls] = tf.keras.utils.load_img(image_path) # load image using keras utility function and save it in image_dict
     
-    st.write('# Random sample from the dataset')
+    st.subheader('Random sample from the dataset')
 
     # take random sample from each class
     fig = plt.figure(figsize=(15, 12))
@@ -45,12 +45,16 @@ def main():
     "class": count_dict.keys(), # keys of count_dict are class labels
     "count": count_dict.values(), # value of count_dict contain counts of each class
     })
-    st.text(df_count_train)
 
-    fig = plt.subplots()
-    plt.figure(figsize=(15,12))
-    df_count_train.plot.bar(x='class', y='count', title="Training Data Count per class")
-    st.pyplot()
+    col11, col12 = st.columns([1,2])
+    with col11:
+        st.text(df_count_train)
+
+    with col12:
+        fig = plt.subplots()
+        plt.figure(figsize=(15,12))
+        df_count_train.plot.bar(x='class', y='count', title="Training Data Count per class")
+        st.pyplot()
 
     
 
