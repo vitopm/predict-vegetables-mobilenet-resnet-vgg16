@@ -15,7 +15,8 @@ def main():
     st.write('🍅🍆🥒🥕🥔🥜🍅🍆🥒🥕🥔🥜🍅🍆🥒🥕🥔🥜')
     st.caption('*\"Broccoli or cauliflower?\"*')
     st.caption('*\"I have no idea.. but this website does!\"*')
-    
+    st.write('----')
+
     class_dirs = os.listdir("Vegetable Images/train") # list all directories inside "train" folder
     image_dict = {} # store image array(key) for every class(value)
     count_dict = {} # store count of files(key) for every class(value)
@@ -40,6 +41,7 @@ def main():
         plt.axis("off")
     st.pyplot(fig)
 
+    st.write('----')
     st.subheader("Data Distribution of training data across classes")
     df_count_train = pd.DataFrame({
     "class": count_dict.keys(), # keys of count_dict are class labels
