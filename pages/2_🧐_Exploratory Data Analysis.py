@@ -47,6 +47,8 @@ def main():
     })
     st.text(df_count_train)
 
+    st.write(df_count_train.values())
+
     
 
 if __name__ == '__main__':
