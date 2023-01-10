@@ -47,7 +47,10 @@ def main():
     })
     st.text(df_count_train)
 
-    st.write(df_count_train.values())
+    fig = plt.subplots()
+    plt.figure(figsize=(15,12))
+    df_count_train.plot.bar(x='class', y='count', title="Training Data Count per class")
+    st.pyplot()
 
     
 

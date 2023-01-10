@@ -3,3 +3,6 @@ primaryColor="#8fdde7"
 backgroundColor="#fbe5c8"
 secondaryBackgroundColor="#b6e5d8"
 textColor="#000000"
+
+[deprecation]
+showPyplotGlobalUse = false
