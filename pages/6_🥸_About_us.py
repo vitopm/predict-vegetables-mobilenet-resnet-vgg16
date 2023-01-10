@@ -8,11 +8,11 @@ def main():
 
     st.write('----')
     
-    st.write('#### 🍆Gerry Guinardi')
+    st.write('#### 🍆 Gerry Guinardi')
 
-    st.write('#### 🥔Michael Gunawan')
+    st.write('#### 🥔 Michael Gunawan')
 
-    st.write('#### 🥕Vito Pramudita Minardi')
+    st.write('#### 🥕 Vito Pramudita Minardi')
     
 
 
