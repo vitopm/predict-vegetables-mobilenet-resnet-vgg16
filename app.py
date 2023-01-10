@@ -65,7 +65,7 @@ def predict_image(filename,model):
     st.write('🍅🍆🥒🥕🥔🥜🍅🍆🥒🥕🥔🥜🍅🍆🥒🥕🥔🥜🍅🍆🥒🥕🥔🥜🍅🍆🥒🥕🥔🥜🍅🍆')
 
 def main():
-    st.image('./images/vege-background.jpg')
+    st.image('./asset/images/vege-background.jpg')
     st.title("What vegetable is that?!")
     st.write('🍅🍆🥒🥕🥔🥜🍅🍆🥒🥕🥔🥜🍅🍆🥒🥕🥔🥜')
     st.caption('*\"Broccoli or cauliflower?\"*')
