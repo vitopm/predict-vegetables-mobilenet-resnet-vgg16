@@ -40,6 +40,9 @@ thinking_word = [
 ]
 
 def predict_image(filename,model):
+    st.write('#### Your image')
+    st.image(filename, caption=filename.name, width=300)
+
     st.write('----')
     st.subheader('🔎Prediction result')
     img_ = image.load_img(filename, target_size=(224, 224))
@@ -48,23 +51,41 @@ def predict_image(filename,model):
     img_processed /= 255.
 
     with st.spinner('Which vegetable is this hmm..'):
-        prediction = model.predict(img_processed)
+        prediction_mobilenet = model[0].predict(img_processed)
+        prediction_resnet = model[1].predict(img_processed)
+        prediction_vgg16 = model[2].predict(img_processed)
         st.success(f'🤖 : *{thinking_word[random.randint(0, len(thinking_word)-1)]}*')
-    index = np.argmax(prediction)
+    index_mobilenet = np.argmax(prediction_mobilenet)
+    index_resnet = np.argmax(prediction_resnet)
+    index_vgg16 = np.argmax(prediction_vgg16)
 
     # show result
-    col11, col12 = st.columns(2)
+    col11, col12, col13 = st.columns(3)
     with col11:
-        st.write('#### Your image')
-        st.image(filename, caption=filename.name)
-
-    with col12:
-        st.write(f'#### Prediction: {category[index]}')
+        # mobilenet
+        st.write(f'##### MobileNetV2 Prediction: {category[index_mobilenet]}')
         fig, ax = plt.subplots()
-        plt.title(f"Prediction - {category[index]} - {100*np.max(prediction):.2f}%")
+        plt.title(f"MobileNetV2 Prediction - {category[index_mobilenet]} - {100*np.max(prediction_mobilenet):.2f}%")
         plt.axis('off')
         plt.imshow(img_array)
         st.pyplot(fig)
+
+    with col12: # resnet
+        st.write(f'##### ResNet Prediction: {category[index_resnet]}')
+        fig, ax = plt.subplots()
+        plt.title(f"ResNet Prediction - {category[index_resnet]} - {100*np.max(prediction_resnet):.2f}%")
+        plt.axis('off')
+        plt.imshow(img_array)
+        st.pyplot(fig)
+    
+    with col13: #vgg16
+        st.write(f'##### VGG16 Prediction: {category[index_vgg16]}')
+        fig, ax = plt.subplots()
+        plt.title(f"VGG16 Prediction - {category[index_vgg16]} - {100*np.max(prediction_vgg16):.2f}%")
+        plt.axis('off')
+        plt.imshow(img_array)
+        st.pyplot(fig)
+
     st.write('----')
     st.write('🍅🍆🥒🥕🥔🥜🍅🍆🥒🥕🥔🥜🍅🍆🥒🥕🥔🥜🍅🍆🥒🥕🥔🥜🍅🍆🥒🥕🥔🥜🍅🍆')
 
@@ -76,7 +97,7 @@ def main():
     st.caption('*\"I have no idea.. but this website does!\"*')
     st.write('----')
     st.write('I know we are all tired of guessing or asking what kind of vegetable is it on top the shelf in your local supermarket. No worries, we are here to help!')
-    st.write('Utilizing deep learning model trained with __MobileNetV2__ algorithm, this website can predict vegetables from the list below. Click button below to see which vegetable names are available to predict.')
+    st.write('Utilizing and comparing the best deep learning model trained with __MobileNetV2__, __ResNet__, and __VGG16__  algorithm, this website can predict vegetables from the list below. Click button below to see which vegetable names are available to predict.')
     with st.expander("💡Show vegetable list"):
         st.write('Click to see the images from __our dataset__ or __use your own pictures__!')
         col1, col2, col3, col4, col5 = st.columns(5)
@@ -103,7 +124,11 @@ def main():
     st.subheader('🖼️Insert picture to predict')
     
     # load model
-    model = tf.keras.models.load_model('models/mobilenet_model_v2.h5')
+    model = [
+        tf.keras.models.load_model('models/mobilenet_model_v2.h5'), #0
+        tf.keras.models.load_model('models/resnet_model.h5'), #1
+        tf.keras.models.load_model('models/vgg16_model.h5') #2
+    ]
 
     tab1, tab2 = st.tabs(["⬆️Upload photo", '📸Take photo'])
     with tab1:
