@@ -121,7 +121,7 @@ def main():
 
     # upload image
     st.write("----")
-    st.subheader('🖼️Insert picture to predict')
+    st.subheader('🖼️Insert vegetable picture to predict')
     
     # load model
     model = [
