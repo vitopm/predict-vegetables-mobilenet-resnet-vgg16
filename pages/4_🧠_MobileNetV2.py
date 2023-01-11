@@ -4,11 +4,10 @@ def main():
     st.image('./asset/images/vege-background.jpg')
     st.title("🧠MobileNetV2")
     st.write('🍅🍆🥒🥕🥔🥜🍅🍆🥒🥕🥔🥜🍅🍆🥒🥕🥔🥜')
-    st.caption('*\"Broccoli or cauliflower?\"*')
-    st.caption('*\"I have no idea.. but this website does!\"*')
+    st.caption('*\"Mwahahaha i am the brain mwahahha\"*')
     st.write('----')
     st.subheader('Building MobileNetV2')
-    st.write('with pretrained with from imagenet')
+    st.write('with pretrained weight from imagenet')
     code1 = '''
     pretrained_mobilenet_model = tf.keras.applications.MobileNetV2(
         weights='imagenet', 
@@ -67,6 +66,5 @@ _________________________________________________________________
     
     st.image('mobilenet_model.png')
 
-    
 if __name__ == '__main__':
     main()

@@ -12,8 +12,7 @@ def main():
     st.image('./asset/images/vege-background.jpg')
     st.title("✍️ Data Preprocessing")
     st.write('🍅🍆🥒🥕🥔🥜🍅🍆🥒🥕🥔🥜🍅🍆🥒🥕🥔🥜')
-    st.caption('*\"Broccoli or cauliflower?\"*')
-    st.caption('*\"I have no idea.. but this website does!\"*')
+    st.caption('*\"What are we going to do with this dataset?\"*')
     st.write('----')
     st.subheader('Data processing stage with resizing and rescaling operations')
 

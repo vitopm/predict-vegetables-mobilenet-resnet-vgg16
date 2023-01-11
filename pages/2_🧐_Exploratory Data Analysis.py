@@ -13,8 +13,7 @@ def main():
     st.image('./asset/images/vege-background.jpg')
     st.title("🤔Exploratory Data Analysis")
     st.write('🍅🍆🥒🥕🥔🥜🍅🍆🥒🥕🥔🥜🍅🍆🥒🥕🥔🥜')
-    st.caption('*\"Broccoli or cauliflower?\"*')
-    st.caption('*\"I have no idea.. but this website does!\"*')
+    st.caption('*\"What is inside this dataset?\"*')
     st.write('----')
 
     class_dirs = os.listdir("Vegetable Images/train") # list all directories inside "train" folder
@@ -26,22 +25,7 @@ def main():
         count_dict[cls] = len(file_paths) # count number of files in each class and add it to count_dict
         image_path = random.choice(file_paths) # select random item from list of image paths
         image_dict[cls] = tf.keras.utils.load_img(image_path) # load image using keras utility function and save it in image_dict
-    
-    st.subheader('Random sample from the dataset')
 
-    # take random sample from each class
-    fig = plt.figure(figsize=(15, 12))
-    for i, (cls,img) in enumerate(image_dict.items()): # iterate over dictionary items (class label, image array)
-        # create a subplot axis
-        plt.subplot(3,5, i + 1)
-        # plot each image
-        plt.imshow(img)
-        # set "class name" along with "image size" as title 
-        plt.title(f'{cls}, {img.size}')
-        plt.axis("off")
-    st.pyplot(fig)
-
-    st.write('----')
     st.subheader("Data Distribution of training data across classes")
     df_count_train = pd.DataFrame({
     "class": count_dict.keys(), # keys of count_dict are class labels
@@ -57,8 +41,21 @@ def main():
         plt.figure(figsize=(15,12))
         df_count_train.plot.bar(x='class', y='count', title="Training Data Count per class")
         st.pyplot()
-
     
+    st.write('----')
+    st.subheader('Random sample from the dataset')
+    # take random sample from each class
+    fig = plt.figure(figsize=(15, 12))
+    for i, (cls,img) in enumerate(image_dict.items()): # iterate over dictionary items (class label, image array)
+        # create a subplot axis
+        plt.subplot(5,3, i + 1)
+        # plot each image
+        plt.tight_layout()
+        plt.imshow(img)
+        # set "class name" along with "image size" as title 
+        plt.title(f'{cls}, {img.size}')
+        plt.axis("off")
+    st.pyplot(fig)
 
 if __name__ == '__main__':
     main()
