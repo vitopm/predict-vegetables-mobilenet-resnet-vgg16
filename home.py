@@ -29,6 +29,24 @@ test_dataset = [
     'https://binusianorg-my.sharepoint.com/personal/vito_minardi_binus_ac_id/_layouts/15/guestaccess.aspx?folderid=04da96e9b9fab4321b0f5298fe56cb81f&authkey=ARtPJKN58bB9ZePu48zpGhI&e=UePxcl'
 ]
 
+vegetable_google =[
+    'https://www.google.com/search?q=flat+beans&source=hp&ei=566_Y7BY4ZOaB77-tsgF&iflsig=AK50M_UAAAAAY7-892BtJROEFrDTLO_cYIwnIud59_P6&ved=0ahUKEwjw57HUucH8AhXhieYKHT6_DVkQ4dUDCAc&uact=5&oq=flat+beans&gs_lcp=Cgdnd3Mtd2l6EAMyBQguEIAEMgUIABCABDIGCAAQFhAeMgYIABAWEB4yBggAEBYQHjIGCAAQFhAeMgYIABAWEB4yBggAEBYQHjIGCAAQFhAeMgYIABAWEB46EQguEIMBEMcBELEDENEDEIAEOggILhCxAxCDAToLCC4QgAQQsQMQgwE6DgguEIMBENQCELEDEIAEOhEILhCABBCxAxCDARDHARDRAzoLCAAQgAQQsQMQgwE6CAgAEIAEELEDOgoIABCxAxCDARAKOggILhCABBCxAzoICAAQsQMQgwE6BwgAEIAEEAo6DQgAEIAEELEDEIMBEAo6CAgAEBYQHhAKUABYkQpg7QpoAHAAeACAAX-IAdUGkgEDOC4ymAEAoAEB&sclient=gws-wiz',
+    'https://www.google.com/search?q=bitter+gourd&ei=6K6_Y7XAOoie3LUPhqOV0AI&gs_ssp=eJzj4tVP1zc0TCpPM841NkszYHRg8OJJyiwpSS1SSM8vLUoBAIzzCX8&oq=bitter&gs_lcp=Cgxnd3Mtd2l6LXNlcnAQARgAMgoILhCDARCxAxBDMgsILhCABBDHARCvATIICAAQgAQQsQMyBAguEEMyCwguEIAEEMcBEK8BMgsILhCABBCxAxCDATIECC4QQzIICAAQgAQQsQMyCAgAEIAEELEDMgUIABCABDoKCAAQRxDWBBCwAzoHCAAQsAMQQzoNCAAQ5AIQ1gQQsAMYAToPCC4Q1AIQyAMQsAMQQxgCOgwILhDIAxCwAxBDGAI6CwgAEIAEELEDEIMBOg4ILhCxAxCDARDHARDRAzoMCC4Q6gIQtAIQQxgDOg8ILhDUAhDqAhC0AhBDGAM6DAgAEOoCELQCEEMYAzoHCC4Q1AIQQzoRCC4QgAQQsQMQgwEQxwEQ0QM6CggAELEDEIMBEEM6DgguEK8BEMcBEJIDEIAEOggIABCABBDJA0oECEEYAEoECEYYAVCnBlj9DWCJHWgEcAF4AIABb4gB8wSSAQM2LjGYAQCgAQGwAQfIARHAAQHaAQYIARABGAnaAQYIAhABGAjaAQQIAxgH&sclient=gws-wiz-serp',
+    'https://www.google.com/search?q=bottle+gourd&ei=EK-_Y-uTCZq24t4P__Oa4Aw&gs_ssp=eJzj4tTP1TcwzikwjDdg9OJJyi8pyUlVSM8vLUoBAF7kCAA&oq=bott&gs_lcp=Cgxnd3Mtd2l6LXNlcnAQARgAMgQILhBDMgoIABCxAxCDARBDMhEILhCABBCxAxCDARDHARCvATIICAAQgAQQsQMyBQgAEIAEMgUIABCABDILCAAQgAQQsQMQgwEyCwgAEIAEELEDEIMBMgUIABCABDIFCAAQgAQ6CggAEEcQ1gQQsAM6BwguENQCEEM6BAgAEEM6CwguEIAEELEDEIMBOgoILhDHARDRAxBDOgoIABCxAxCDARAKOhEILhCABBCxAxCDARDHARDRAzoICC4QgAQQsQM6CwguELEDEMcBEK8BOgsILhCABBDHARCvAUoECEEYAEoECEYYAFDWBViMDmDAFWgEcAF4AIABZ4gBvQOSAQM0LjGYAQCgAQHIAQjAAQE&sclient=gws-wiz-serp',
+    'https://www.google.com/search?q=green+brinjal&ei=Oa-_Y5zvFMXK3LUPiNG6gAE&ved=0ahUKEwjc79L7ucH8AhVFJbcAHYioDhAQ4dUDCA4&uact=5&oq=green+brinjal&gs_lcp=Cgxnd3Mtd2l6LXNlcnAQAzIICAAQBxAeEBMyCAgAEAcQHhATMggIABAHEB4QEzIICAAQBxAeEBMyCAgAEAcQHhATMggIABAHEB4QEzIHCAAQgAQQEzIHCAAQgAQQEzIHCAAQgAQQEzIHCAAQgAQQEzoKCAAQRxDWBBCwAzoHCAAQsAMQQzoNCAAQ5AIQ1gQQsAMYAToMCC4QyAMQsAMQQxgCOg8ILhDUAhDIAxCwAxBDGAI6BggAEAcQHjoHCAAQgAQQDUoECEEYAEoECEYYAVCUBVjLCmD-C2gBcAF4AYABoQKIAbIFkgEFNS4wLjGYAQCgAQHIARDAAQHaAQYIARABGAnaAQYIAhABGAg&sclient=gws-wiz-serp',
+    'https://www.google.com/search?q=broccoli&ei=Pq-_Y7z3BMm-z7sPpdWk8A8&ved=0ahUKEwi8jvT9ucH8AhVJ33MBHaUqCf4Q4dUDCA4&uact=5&oq=broccoli&gs_lcp=Cgxnd3Mtd2l6LXNlcnAQAzIHCC4QsQMQQzIFCAAQgAQyBQgAEIAEMgUILhCABDIFCAAQgAQyBQguEIAEMgQIABBDMgQIABBDMgcIABCABBAKMgUIABCABDoKCAAQRxDWBBCwAzoHCAAQsAMQQzoMCC4QyAMQsAMQQxgBOgQILhBDOgsILhCABBCxAxCDAToHCC4Q1AIQQzoRCC4QgAQQsQMQgwEQxwEQ0QM6CAgAELEDEIMBOgsIABCABBCxAxCDAToICAAQgAQQsQM6BAgAEAM6CAguEIAEELEDOgoILhCABBCxAxAKOgoIABCABBCxAxAKSgQIQRgASgQIRhgBUPYGWJERYL0SaANwAXgBgAHDAYgBlgmSAQMyLjaYAQCgAQHIARTAAQHaAQYIARABGAg&sclient=gws-wiz-serp',
+    'https://www.google.com/search?q=cabbage&ei=UK-_Y_WIJ7r2z7sPrZGkyA8&ved=0ahUKEwj18OCGusH8AhU6-3MBHa0ICfkQ4dUDCA4&uact=5&oq=cabbage&gs_lcp=Cgxnd3Mtd2l6LXNlcnAQAzIHCC4QsQMQQzIECAAQQzIFCAAQgAQyBQgAEIAEMgUIABCABDIFCC4QgAQyBQguEIAEMgUIABCABDIECAAQQzIECC4QQzoKCAAQRxDWBBCwAzoHCC4Q1AIQQzoICAAQgAQQsQM6EQguEIAEELEDEIMBEMcBENEDOgsIABCABBCxAxCDAToICC4QsQMQgwE6CgguEIAEELEDEAo6DQguENQCELEDEIAEEAo6EAguEIAEELEDEIMBENQCEAo6BwgAEIAEEAo6BQguELEDSgQIQRgASgQIRhgAULIFWNoJYLALaAJwAXgAgAFkiAHUBJIBAzYuMZgBAKABAcgBCMABAQ&sclient=gws-wiz-serp',
+    'https://www.google.com/search?q=capsicum&ei=W6-_Y9CtPO3sz7sP9I-skAE&gs_ssp=eJzj4tZP1zc0MkwvKKioNGB0YPDiSE4sKM5MLs0FAF4KB78&oq=capsi&gs_lcp=Cgxnd3Mtd2l6LXNlcnAQAxgAMgcILhCxAxBDMg4ILhCDARDUAhCxAxCABDILCC4Q1AIQsQMQgAQyBwgAEIAEEAoyBQgAEIAEMgUIABCABDIFCC4QgAQyBQgAEIAEMgUIABCABDIFCAAQgAQ6CggAEEcQ1gQQsAM6BwgAELADEEM6DAguEMgDELADEEMYAToPCC4Q1AIQyAMQsAMQQxgBOgQILhBDOgQIABBDOhEILhCABBCxAxCDARDHARDRAzoICC4QsQMQgwE6CAgAEIAEELEDOgsIABCABBCxAxCDAToNCC4QgAQQsQMQgwEQCjoKCAAQgAQQsQMQCjoKCC4QxwEQ0QMQQzoNCC4QgwEQ1AIQsQMQQzoLCC4QgAQQsQMQ1AJKBAhBGABKBAhGGABQtgNYkgdghw5oAnABeACAAZEBiAGPBJIBAzMuMpgBAKABAcgBD8ABAdoBBAgBGAg&sclient=gws-wiz-serp',
+    'https://www.google.com/search?q=carrot&ei=Z6-_Y77jG-Wlmge635e4DA&ved=0ahUKEwj-stGRusH8AhXlkuYKHbrvBccQ4dUDCA4&uact=5&oq=carrot&gs_lcp=Cgxnd3Mtd2l6LXNlcnAQAzIECC4QQzILCC4QrwEQxwEQgAQyCAguEIAEELEDMgUIABCABDILCAAQgAQQsQMQgwEyBQguEIAEMgsILhCABBCxAxCDATIICAAQgAQQsQMyBQgAEIAEMgUIABCABDoKCAAQRxDWBBCwAzoHCAAQsAMQQzoNCAAQ5AIQ1gQQsAMYAToMCC4QyAMQsAMQQxgCOg8ILhDUAhDIAxCwAxBDGAI6CQgAEAUQHhDxBDoFCAAQogQ6BwguENQCEEM6BAgAEEM6EQguEIAEELEDEIMBEMcBENEDOggILhCxAxCDAToFCAAQsQM6CAgAELEDEIMBSgQIQRgASgQIRhgBUJMBWL4VYPwVaAFwAXgAgAGDAogB9AuSAQUyLjguMZgBAKABAcgBEcABAdoBBggBEAEYCdoBBggCEAEYCA&sclient=gws-wiz-serp',
+    'https://www.google.com/search?q=cauliflower&ei=eK-_Y4TLBuOE3LUP3--uUA&gs_ssp=eJzj4tTP1TcwNC03LzBgdGDw4k5OLM3JTMvJL08tAgBepAf2&oq=cauli&gs_lcp=Cgxnd3Mtd2l6LXNlcnAQAxgAMgoILhCxAxCDARBDMgUIABCABDIFCAAQgAQyBAgAEEMyBQgAEIAEMgUIABCABDIECC4QQzIFCAAQgAQyBQgAEIAEMgUIABCABDoKCAAQRxDWBBCwAzoHCAAQsAMQQzoMCC4QyAMQsAMQQxgBOg8ILhDUAhDIAxCwAxBDGAE6BwguENQCEEM6EQguEIAEELEDEIMBEMcBENEDOgsIABCABBCxAxCDAToLCC4QgwEQsQMQgAQ6BQguEIAEOggIABCABBCxA0oECEEYAEoECEYYAVDWCFi3DmDvEmgDcAF4AIABswKIAcEHkgEHMS4yLjEuMZgBAKABAcgBFMABAdoBBggBEAEYCA&sclient=gws-wiz-serp',
+    'https://www.google.com/search?q=cucumber&ei=g6-_Y661LJ7Zz7sPn8-puAI&gs_ssp=eJzj4tTP1TcwNK0wKTJg9OJILk0uzU1KLQIAP60GbA&oq=cucu&gs_lcp=Cgxnd3Mtd2l6LXNlcnAQAxgAMgoILhDUAhCxAxBDMgsIABCABBCxAxCDATILCC4QgwEQsQMQgAQyBAgAEEMyCAgAEIAEELEDMgQILhBDMg0IABCABBCxAxCDARAKMgsIABCABBCxAxCDATIFCAAQgAQyCAgAELEDEIMBOgoIABBHENYEELADOgcIABCwAxBDOg0IABDkAhDWBBCwAxgBOgwILhDIAxCwAxBDGAI6BwguENQCEEM6CwguEIAEELEDEIMBOgsIABCABBCxAxDJAzoICC4QgAQQsQM6BwgAEIAEEAo6BwguEIAEEApKBAhBGABKBAhGGAFQlwdYkg5g5hJoBHABeACAAV2IAZIDkgEBNZgBAKABAcgBEcABAdoBBggBEAEYCdoBBggCEAEYCA&sclient=gws-wiz-serp',
+    'https://www.google.com/search?q=papaya+fruit&ei=q6-_Y_i_GKvtz7sPhqCg-AI&gs_ssp=eJzj4tDP1TdIN0krMmD04ilILEisTFRIKyrNLAEAWT4Hzg&oq=papaya&gs_lcp=Cgxnd3Mtd2l6LXNlcnAQARgBMhEILhCDARCvARDHARCxAxCABDIHCC4Q1AIQQzIKCAAQsQMQgwEQQzIECAAQQzIICAAQgAQQsQMyBQgAEIAEMgcILhDUAhBDMgUIABCABDIFCAAQgAQyBwgAEIAEEAo6CggAEEcQ1gQQsAM6BwgAELADEEM6DQgAEOQCENYEELADGAE6DAguEMgDELADEEMYAjoECC4QQzoLCAAQgAQQsQMQgwE6CAguELEDEIMBOhEILhCABBCxAxCDARDHARCvAToLCC4QgAQQsQMQgwE6EwguEIAEELEDEIMBEMcBEK8BEAo6DQgAEIAEELEDEIMBEApKBAhBGABKBAhGGAFQpAdYzRBg2BloAnABeACAAWuIAYoEkgEDNS4xmAEAoAEByAESwAEB2gEGCAEQARgJ2gEGCAIQARgI&sclient=gws-wiz-serp',
+    'https://www.google.com/search?q=potato&source=lnms&tbm=isch&sa=X&ved=2ahUKEwiWicm8usH8AhXSILcAHVsqD4AQ_AUoAXoECAEQAw&biw=1282&bih=989',
+    'https://www.google.com/search?q=pumpkin&tbm=isch&ved=2ahUKEwizwMi-usH8AhXTV3wKHSiYBlAQ2-cCegQIABAA&oq=pumpkin&gs_lcp=CgNpbWcQAzIHCAAQsQMQQzIECAAQQzIECAAQQzIECAAQQzIECAAQQzIECAAQQzIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQ6CAgAEIAEELEDULcFWKAMYK0NaABwAHgAgAGmAYgBwQWSAQM2LjKYAQCgAQGqAQtnd3Mtd2l6LWltZ8ABAQ&sclient=img&ei=xa-_Y_PJKdOv8QOosJqABQ&bih=989&biw=1282',
+    'https://www.google.com/search?q=radish&tbm=isch&chips=q:radish,g_1:vegetable:TyIwHucKFGk%3D&hl=en-US&sa=X&ved=2ahUKEwir5dvJusH8AhXaiNgFHaL_DjUQ4lYoAHoECAEQIw&biw=1282&bih=989',
+    'https://www.google.com/search?q=tomato&tbm=isch&ved=2ahUKEwiuqp3MusH8AhUEWXwKHftkCucQ2-cCegQIABAA&oq=tomato&gs_lcp=CgNpbWcQAzIECAAQQzIECAAQQzIECAAQQzIECAAQQzIECAAQQzIICAAQgAQQsQMyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEOgcIABCxAxBDOgUIABCxA1DvBFjwB2DgCGgAcAB4AIABogGIAdIEkgEDNi4xmAEAoAEBqgELZ3dzLXdpei1pbWfAAQE&sclient=img&ei=4q-_Y66xFISy8QP7yam4Dg&bih=989&biw=1282&hl=en-US'
+]
+
 thinking_robot = [
     'I think this is it!',
     'Is this correct?',
@@ -128,19 +146,19 @@ def main():
         for idx,name in enumerate(category.values()):
             if idx < len(category)*(1/5):
                 with col1:
-                    st.write(f'- [{name}]({test_dataset[idx]})')
+                    st.write(f'- [{name}]({vegetable_google[idx]})')
             elif idx < len(category)*(2/5):
                 with col2:
-                    st.write(f'- [{name}]({test_dataset[idx]})')
+                    st.write(f'- [{name}]({vegetable_google[idx]})')
             elif idx < len(category)*(3/5):
                 with col3:
-                    st.write(f'- [{name}]({test_dataset[idx]})')
+                    st.write(f'- [{name}]({vegetable_google[idx]})')
             elif idx < len(category)*(4/5):
                 with col4:
-                    st.write(f'- [{name}]({test_dataset[idx]})')
+                    st.write(f'- [{name}]({vegetable_google[idx]})')
             else:
                 with col5:
-                    st.write(f'- [{name}]({test_dataset[idx]})')
+                    st.write(f'- [{name}]({vegetable_google[idx]})')
 
         st.caption('Dataset Source: [Vegetable Image Dataset - Kaggle](https://www.kaggle.com/datasets/misrakahmed/vegetable-image-dataset)')
 
