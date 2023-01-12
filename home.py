@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 import tensorflow as tf
 import random
 from tensorflow.keras.preprocessing import image
+import os
 
 category={
     0: 'Bean', 1: 'Bitter Gourd', 2: 'Bottle Gourd', 3 : 'Green Brinjal', 4: "Broccoli", 5: 'Cabbage', 6: 'Capsicum', 7: 'Carrot', 8: 'Cauliflower',
@@ -28,7 +29,7 @@ test_dataset = [
     'https://binusianorg-my.sharepoint.com/personal/vito_minardi_binus_ac_id/_layouts/15/guestaccess.aspx?folderid=04da96e9b9fab4321b0f5298fe56cb81f&authkey=ARtPJKN58bB9ZePu48zpGhI&e=UePxcl'
 ]
 
-thinking_word = [
+thinking_robot = [
     'I think this is it!',
     'Is this correct?',
     'Maybe this one',
@@ -36,12 +37,24 @@ thinking_word = [
     'This is what I think, is this correct?',
     'I\'d to be human than robot',
     'How does it feel like to be human?',
-    'I don\'t really like vegetables, because I can\'t eat them'
+    'I don\'t really like vegetables, because I can\'t eat them',
+    'Eat your veggie, kids!'
 ]
 
-def predict_image(filename,model):
-    st.write('#### Your image')
-    st.image(filename, caption=filename.name, width=300)
+def top_prediction(prediction, top_num):
+    with st.expander(f"Here are {top_num} most likely vegetables:"):
+        top_confidence = np.flip(np.sort(prediction))[0]
+        top_index = np.flip(np.argsort(prediction))[0]
+        for i in range (0, top_num):
+            st.write(f'{i+1}. {category[top_index[i]]} - {100*top_confidence[i]:.5f}%')
+
+def predict_image(filename, model, user_input = True):
+    if user_input is True:
+        st.write('#### Your image')
+        st.image(filename, caption=filename.name, width=300)
+    else:
+        st.write('#### Your image')
+        st.image(filename, caption=filename, width=300)
 
     st.write('----')
     st.subheader('🔎Prediction result')
@@ -50,11 +63,11 @@ def predict_image(filename,model):
     img_processed = np.expand_dims(img_array, axis=0) 
     img_processed /= 255.
 
-    with st.spinner('Which vegetable is this hmm..'):
+    with st.spinner('🤖 : *Which vegetable is this hmm..*'):
         prediction_mobilenet = model[0].predict(img_processed)
         prediction_resnet = model[1].predict(img_processed)
         prediction_vgg16 = model[2].predict(img_processed)
-        st.success(f'🤖 : *{thinking_word[random.randint(0, len(thinking_word)-1)]}*')
+        st.success(f'🤖 : *{thinking_robot[random.randint(0, len(thinking_robot)-1)]}*')
     index_mobilenet = np.argmax(prediction_mobilenet)
     index_resnet = np.argmax(prediction_resnet)
     index_vgg16 = np.argmax(prediction_vgg16)
@@ -69,6 +82,7 @@ def predict_image(filename,model):
         plt.axis('off')
         plt.imshow(img_array)
         st.pyplot(fig)
+        top_prediction(prediction_mobilenet,5)
 
     with col12: # resnet
         st.write(f'##### ResNet Prediction: {category[index_resnet]}')
@@ -77,6 +91,7 @@ def predict_image(filename,model):
         plt.axis('off')
         plt.imshow(img_array)
         st.pyplot(fig)
+        top_prediction(prediction_resnet,5)
     
     with col13: #vgg16
         st.write(f'##### VGG16 Prediction: {category[index_vgg16]}')
@@ -85,10 +100,10 @@ def predict_image(filename,model):
         plt.axis('off')
         plt.imshow(img_array)
         st.pyplot(fig)
+        top_prediction(prediction_vgg16,5)
 
     st.write('----')
     st.write('🍅🍆🥒🥕🥔🥜🍅🍆🥒🥕🥔🥜🍅🍆🥒🥕🥔🥜🍅🍆🥒🥕🥔🥜🍅🍆🥒🥕🥔🥜🍅🍆')
-
 
 def load_models():
     models = [
@@ -107,9 +122,9 @@ def main():
     st.write('----')
     st.write('I know we are all tired of guessing or asking what kind of vegetable is it on top the shelf in your local supermarket. No worries, we are here to help!')
     st.write('Utilizing and comparing the best deep learning model trained with __MobileNetV2__, __ResNet__, and __VGG16__  algorithm, this website can predict vegetables from the list below. Click button below to see which vegetable names are available to predict.')
+
     with st.expander("💡Show vegetable list"):
-        st.write('Click to see the images from __our dataset__ or __use your own pictures__!')
-        col1, col2, col3, col4, col5 = st.columns(5)
+        [col1, col2, col3, col4, col5] = st.columns(5)
         for idx,name in enumerate(category.values()):
             if idx < len(category)*(1/5):
                 with col1:
@@ -126,25 +141,43 @@ def main():
             else:
                 with col5:
                     st.write(f'- [{name}]({test_dataset[idx]})')
+
         st.caption('Dataset Source: [Vegetable Image Dataset - Kaggle](https://www.kaggle.com/datasets/misrakahmed/vegetable-image-dataset)')
 
     # upload image
     st.write("----")
     st.subheader('🖼️Insert vegetable picture to predict')
+
     # load model
     model = load_models()
-    tab1, tab2 = st.tabs(["⬆️Upload photo", '📸Take photo'])
+    tab1, tab2, tab3 = st.tabs(["⬆️Upload photo", '📸Take photo', '🔎Select from dataset'])
+
     with tab1:
         uploaded_file = st.file_uploader(label="Choose an image",accept_multiple_files=False,type=['png', 'jpg', 'jpeg'])
         if uploaded_file is not None:
             predict_image(uploaded_file ,model) #predict image
 
     with tab2:
-        # pass
         with st.expander('Click here to open camera'):
             uploaded_file = st.camera_input("Take a picture")
             if uploaded_file is not None:
                 predict_image(uploaded_file ,model) #predict image
+    with tab3:
+        path = 'Vegetable Images'
+
+        dataset_types = os.listdir(path)
+        select_dataset_type = st.selectbox('Dataset type', [x for x in dataset_types])
+        dataset_path = f'{path}/{select_dataset_type}'
+
+        vegetables = os.listdir(dataset_path)
+        select_vegetable = st.selectbox('Vegetable', [x for x in vegetables])
+        vegetable_path = f'{dataset_path}/{select_vegetable}'
+
+        vegetable_images = os.listdir(vegetable_path)
+        select_vegetable_image = st.selectbox('Image name', [x for x in vegetable_images])
+        vegetable_image_path = f'{vegetable_path}/{select_vegetable_image}'
+
+        predict_image(vegetable_image_path, model, user_input= False)
 
 if __name__ == '__main__':
     main()
