@@ -89,7 +89,19 @@ def predict_image(filename,model):
     st.write('----')
     st.write('🍅🍆🥒🥕🥔🥜🍅🍆🥒🥕🥔🥜🍅🍆🥒🥕🥔🥜🍅🍆🥒🥕🥔🥜🍅🍆🥒🥕🥔🥜🍅🍆')
 
+
+def load_models():
+    models = [
+        tf.keras.models.load_model('models/mobilenet_model_v2.h5'), #0
+        tf.keras.models.load_model('models/resnet_model.h5'), #1
+        tf.keras.models.load_model('models/vgg16_model.h5') #2
+    ]
+    return models
+
 def main():
+    # load model
+    model = load_models()
+    
     st.image('./asset/images/vege-background.jpg')
     st.title("🤔What vegetable is that?!")
     st.write('🍅🍆🥒🥕🥔🥜🍅🍆🥒🥕🥔🥜🍅🍆🥒🥕🥔🥜')
@@ -122,13 +134,6 @@ def main():
     # upload image
     st.write("----")
     st.subheader('🖼️Insert vegetable picture to predict')
-    
-    # load model
-    model = [
-        tf.keras.models.load_model('models/mobilenet_model_v2.h5'), #0
-        tf.keras.models.load_model('models/resnet_model.h5'), #1
-        tf.keras.models.load_model('models/vgg16_model.h5') #2
-    ]
 
     tab1, tab2 = st.tabs(["⬆️Upload photo", '📸Take photo'])
     with tab1:
