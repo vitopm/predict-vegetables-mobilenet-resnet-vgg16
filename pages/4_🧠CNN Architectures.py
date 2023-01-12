@@ -12,28 +12,28 @@ def main():
         st.subheader('Building MobileNetV2')
         st.write('with pretrained weight from imagenet')
         code1 = '''
-        pretrained_mobilenet_model = tf.keras.applications.MobileNetV2(
-            weights='imagenet', 
-            include_top=False, 
-            input_shape=[height,width, 3])
+pretrained_mobilenet_model = tf.keras.applications.MobileNetV2(
+    weights='imagenet', 
+    include_top=False, 
+    input_shape=[height,width, 3])
 
-    pretrained_mobilenet_model.trainable=False
+pretrained_mobilenet_model.trainable=False
 
-    mobilenet_model = tf.keras.Sequential([
-            pretrained_mobilenet_model,
-            tf.keras.layers.GlobalAveragePooling2D(),
-            tf.keras.layers.Dense(15, activation='softmax')
-        ])
+mobilenet_model = tf.keras.Sequential([
+    pretrained_mobilenet_model,
+    tf.keras.layers.GlobalAveragePooling2D(),
+    tf.keras.layers.Dense(15, activation='softmax')
+])
         '''
         st.code(code1, language='python')
 
         st.write('##### Compile the model with Adam optimizer, sparse categoritcal crossentropy loss function, with the metrics accuracy')
         code2 = '''
-        mobilenet_model.compile(
-            optimizer='adam',
-            loss='sparse_categorical_crossentropy',
-            metrics=['accuracy']
-            )
+mobilenet_model.compile(
+    optimizer='adam',
+    loss='sparse_categorical_crossentropy',
+    metrics=['accuracy']
+    )
         '''
         st.code(code2, language='python')
 
@@ -65,7 +65,7 @@ Non-trainable params: 2,257,984
 _________________________________________________________________
     ''')
 
-        st.write('##### Draw the architecture')
+        st.write('##### MobileNet architecture')
         st.image('asset/images/mobilenet_model.png')
 
         with st.expander("View the complete base model"):
@@ -75,11 +75,11 @@ _________________________________________________________________
         st.subheader('Building ResNet50V2')
         st.write('with pretrained weight from imagenet')
         code1 = '''
-        pretrained_resnet_model = tf.keras.applications.ResNet50V2(
-            weights='imagenet',
-            include_top=False,
-            input_tensor = (tf.keras.layers.Input(shape=(height,width,3)))
-            )
+pretrained_resnet_model = tf.keras.applications.ResNet50V2(
+    weights='imagenet',
+    include_top=False,
+    input_tensor = (tf.keras.layers.Input(shape=(height,width,3)))
+    )
 
 pretrained_resnet_model.trainable=False
 
@@ -93,10 +93,10 @@ resnet_model = tf.keras.Sequential([
 
         st.write('##### Compile the model with Adam optimizer, sparse categoritcal crossentropy loss function, with the metrics accuracy')
         code2 = '''
-        resnet_model.compile(
-            optimizer='adam',
-            loss='sparse_categorical_crossentropy',
-            metrics=['accuracy'])
+resnet_model.compile(
+    optimizer='adam',
+    loss='sparse_categorical_crossentropy',
+    metrics=['accuracy'])
         '''
         st.code(code2, language='python')
 
@@ -127,7 +127,7 @@ Non-trainable params: 23,564,800
 _________________________________________________________________    
 ''')
 
-        st.write('##### Draw the architecture')
+        st.write('##### ResNet architecture')
         st.image('asset/images/resnet_model.png')
 
         with st.expander("View the complete base model"):
@@ -138,11 +138,11 @@ _________________________________________________________________
         st.subheader('Building VGG16')
         st.write('with pretrained weight from imagenet')
         code1 = '''
-        pretrained_vgg16_model = tf.keras.applications.VGG16(
-            weights='imagenet', 
-            include_top=False, 
-            input_shape=[height,width, 3]
-            )
+pretrained_vgg16_model = tf.keras.applications.VGG16(
+    weights='imagenet', 
+    include_top=False, 
+    input_shape=[height,width, 3]
+    )
 
 pretrained_vgg16_model.trainable=False
 
@@ -157,10 +157,10 @@ vgg16_model = tf.keras.Sequential([
 
         st.write('##### Compile the model with Adam optimizer, sparse categoritcal crossentropy loss function, with the metrics accuracy')
         code2 = '''
-        vgg16_model.compile(
-            optimizer='adam',
-            loss='sparse_categorical_crossentropy',
-            metrics=['accuracy'])
+vgg16_model.compile(
+    optimizer='adam',
+    loss='sparse_categorical_crossentropy',
+    metrics=['accuracy'])
         '''
         st.code(code2, language='python')
 
@@ -193,7 +193,7 @@ Non-trainable params: 14,714,688
 _________________________________________________________________    
 ''')
 
-        st.write('##### Draw the architecture')
+        st.write('##### VGG16 architecture')
         st.image('asset/images/vgg16_model.png')
 
         with st.expander("View the complete base model"):
