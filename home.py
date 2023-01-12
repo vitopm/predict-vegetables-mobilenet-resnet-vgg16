@@ -6,6 +6,15 @@ import random
 from tensorflow.keras.preprocessing import image
 import os
 
+@st.cache(allow_output_mutation=True)
+def load_models():
+    models = [
+        tf.keras.models.load_model('models/mobilenet_model_v2.h5'), #0
+        tf.keras.models.load_model('models/resnet_model.h5'), #1
+        tf.keras.models.load_model('models/vgg16_model.h5') #2
+    ]
+    return models
+
 category={
     0: 'Bean', 1: 'Bitter Gourd', 2: 'Bottle Gourd', 3 : 'Green Brinjal', 4: "Broccoli", 5: 'Cabbage', 6: 'Capsicum', 7: 'Carrot', 8: 'Cauliflower',
     9: 'Cucumber', 10: 'Papaya', 11: 'Potato', 12: 'Pumpkin', 13 : "Radish", 14: "Tomato"
@@ -122,14 +131,6 @@ def predict_image(filename, model, user_input = True):
 
     st.write('----')
     st.write('🍅🍆🥒🥕🥔🥜🍅🍆🥒🥕🥔🥜🍅🍆🥒🥕🥔🥜🍅🍆🥒🥕🥔🥜🍅🍆🥒🥕🥔🥜🍅🍆')
-
-def load_models():
-    models = [
-        tf.keras.models.load_model('models/mobilenet_model_v2.h5'), #0
-        tf.keras.models.load_model('models/resnet_model.h5'), #1
-        tf.keras.models.load_model('models/vgg16_model.h5') #2
-    ]
-    return models
 
 def main():
     st.image('./asset/images/vege-background.jpg')
