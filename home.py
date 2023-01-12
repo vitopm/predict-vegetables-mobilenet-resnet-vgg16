@@ -178,8 +178,8 @@ def main():
     with tab2:
         with st.expander('Click here to open camera'):
             uploaded_file = st.camera_input("Take a picture")
-            if uploaded_file is not None:
-                predict_image(uploaded_file ,model) #predict image
+        if uploaded_file is not None:
+            predict_image(uploaded_file ,model) #predict image
     with tab3:
         path = 'Vegetable Images'
 
