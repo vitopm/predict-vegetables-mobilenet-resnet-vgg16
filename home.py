@@ -100,7 +100,7 @@ def load_models():
 
 def main():
     st.image('./asset/images/vege-background.jpg')
-    st.title("🤔What vegetable is that?!")
+    st.title("🤔What veggie is this?")
     st.write('🍅🍆🥒🥕🥔🥜🍅🍆🥒🥕🥔🥜🍅🍆🥒🥕🥔🥜')
     st.caption('*\"Broccoli or cauliflower?\"*')
     st.caption('*\"I have no idea.. but this website does!\"*')
