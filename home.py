@@ -15,6 +15,9 @@ def load_models():
     ]
     return models
 
+# load model
+model = load_models()
+
 category={
     0: 'Bean', 1: 'Bitter Gourd', 2: 'Bottle Gourd', 3 : 'Green Brinjal', 4: "Broccoli", 5: 'Cabbage', 6: 'Capsicum', 7: 'Carrot', 8: 'Cauliflower',
     9: 'Cucumber', 10: 'Papaya', 11: 'Potato', 12: 'Pumpkin', 13 : "Radish", 14: "Tomato"
@@ -167,8 +170,6 @@ def main():
     st.write("----")
     st.subheader('🖼️Insert vegetable picture to predict')
 
-    # load model
-    model = load_models()
     tab1, tab2, tab3 = st.tabs(["⬆️Upload photo", '📸Take photo', '🔎Select from dataset'])
 
     with tab1:
