@@ -99,9 +99,6 @@ def load_models():
     return models
 
 def main():
-    # load model
-    model = load_models()
-    
     st.image('./asset/images/vege-background.jpg')
     st.title("🤔What vegetable is that?!")
     st.write('🍅🍆🥒🥕🥔🥜🍅🍆🥒🥕🥔🥜🍅🍆🥒🥕🥔🥜')
@@ -134,7 +131,8 @@ def main():
     # upload image
     st.write("----")
     st.subheader('🖼️Insert vegetable picture to predict')
-
+    # load model
+    model = load_models()
     tab1, tab2 = st.tabs(["⬆️Upload photo", '📸Take photo'])
     with tab1:
         uploaded_file = st.file_uploader(label="Choose an image",accept_multiple_files=False,type=['png', 'jpg', 'jpeg'])
