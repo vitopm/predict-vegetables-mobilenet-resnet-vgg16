@@ -50,7 +50,7 @@ def main():
         # create a subplot axis
         plt.subplot(5,3, i + 1)
         # plot each image
-        plt.tight_layout()
+        # plt.tight_layout()
         plt.imshow(img)
         # set "class name" along with "image size" as title 
         plt.title(f'{cls}, {img.size}')
