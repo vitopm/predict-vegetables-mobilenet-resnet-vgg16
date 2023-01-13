@@ -145,7 +145,7 @@ def main():
     st.write('----')
     col1, col2 = st.columns([1,2])
     with col1:
-        st.image('asset/images/butterfly meme (2).jpg', width=200)
+        st.image('asset/images/butterfly meme.jpg', width=200)
     with col2:
         st.write('I know we are all tired of guessing or asking what kind of vegetable is it on top the shelf in your local supermarket. No worries, we are here to help!')
         st.write('Utilizing and comparing the best deep learning model trained with __MobileNetV2__, __ResNet__, and __VGG16__  algorithm, this website can predict vegetables from the list below. Click button below to see which vegetable names are available to predict.')
