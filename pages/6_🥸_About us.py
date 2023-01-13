@@ -23,8 +23,101 @@ def main():
         st.write('### 👨🏻‍💻🥕 Vito Pramudita Minardi')
         st.caption('wants to sleep early but my code says the otherwise')
         st.caption('[GitHub](https://www.github.com/vitopm) [Website](https://www.vitopm.com)')
-
-
     
+    st.text('''
+    🥦
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    🥦
+    ''')
+    colgif, colempty = st.columns([1,2])
+    with colgif:
+        st.image('asset/video/crying_kid.gif')
+
 if __name__ == '__main__':
     main()

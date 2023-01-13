@@ -8,11 +8,12 @@ import os
 
 @st.cache(allow_output_mutation=True)
 def load_models():
-    models = [
-        tf.keras.models.load_model('models/mobilenet_model_v2.h5'), #0
-        tf.keras.models.load_model('models/resnet_model.h5'), #1
-        tf.keras.models.load_model('models/vgg16_model.h5') #2
-    ]
+    with st.spinner('🤖 : *reading deep learning model*'):
+        models = [
+            tf.keras.models.load_model('models/mobilenet_model_v2.h5'), #0
+            tf.keras.models.load_model('models/resnet_model.h5'), #1
+            tf.keras.models.load_model('models/vgg16_model.h5') #2
+        ]
     return models
 
 # load model
@@ -142,8 +143,12 @@ def main():
     st.caption('*\"Broccoli or cauliflower?\"*')
     st.caption('*\"I have no idea.. but this website does!\"*')
     st.write('----')
-    st.write('I know we are all tired of guessing or asking what kind of vegetable is it on top the shelf in your local supermarket. No worries, we are here to help!')
-    st.write('Utilizing and comparing the best deep learning model trained with __MobileNetV2__, __ResNet__, and __VGG16__  algorithm, this website can predict vegetables from the list below. Click button below to see which vegetable names are available to predict.')
+    col1, col2 = st.columns([1,2])
+    with col1:
+        st.image('asset/images/butterfly meme (2).jpg', width=200)
+    with col2:
+        st.write('I know we are all tired of guessing or asking what kind of vegetable is it on top the shelf in your local supermarket. No worries, we are here to help!')
+        st.write('Utilizing and comparing the best deep learning model trained with __MobileNetV2__, __ResNet__, and __VGG16__  algorithm, this website can predict vegetables from the list below. Click button below to see which vegetable names are available to predict.')
 
     with st.expander("💡Show vegetable list"):
         [col1, col2, col3, col4, col5] = st.columns(5)
