@@ -6,7 +6,10 @@ import random
 from tensorflow.keras.preprocessing import image
 import os
 
-st.set_page_config(page_title="What veggie is this?")
+st.set_page_config(
+    page_title="What veggie is this?",
+    page_icon="🥕",
+    )
 
 @st.cache(allow_output_mutation=True)
 def load_models():
