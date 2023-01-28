@@ -6,6 +6,8 @@ import random
 from tensorflow.keras.preprocessing import image
 import os
 
+st.set_page_config(page_title="What veggie is this?")
+
 @st.cache(allow_output_mutation=True)
 def load_models():
     with st.spinner('🤖 : *reading deep learning model*'):
@@ -137,7 +139,6 @@ def predict_image(filename, model, user_input = True):
     st.write('🍅🍆🥒🥕🥔🥜🍅🍆🥒🥕🥔🥜🍅🍆🥒🥕🥔🥜🍅🍆🥒🥕🥔🥜🍅🍆🥒🥕🥔🥜🍅🍆')
 
 def main():
-    st.set_page_config(page_title="What veggie is this?")
     st.image('asset/images/vege-background.jpg')
     st.title("🤔What veggie is this?")
     st.write('🍅🍆🥒🥕🥔🥜🍅🍆🥒🥕🥔🥜🍅🍆🥒🥕🥔🥜')
