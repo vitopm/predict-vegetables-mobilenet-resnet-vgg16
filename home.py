@@ -137,7 +137,7 @@ def predict_image(filename, model, user_input = True):
     st.write('🍅🍆🥒🥕🥔🥜🍅🍆🥒🥕🥔🥜🍅🍆🥒🥕🥔🥜🍅🍆🥒🥕🥔🥜🍅🍆🥒🥕🥔🥜🍅🍆')
 
 def main():
-    st.set_page_config(page_title="What veggie is this?", page_icon="🥕", layout="centered", initial_sidebar_state="auto", menu_items=None)
+    st.set_page_config(page_title="What veggie is this?")
     st.image('asset/images/vege-background.jpg')
     st.title("🤔What veggie is this?")
     st.write('🍅🍆🥒🥕🥔🥜🍅🍆🥒🥕🥔🥜🍅🍆🥒🥕🥔🥜')
